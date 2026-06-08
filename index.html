@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mamoru Ueda · Robotics Software Engineer</title>
+  <meta name="description" content="Mamoru Ueda — robotics software engineer working in ROS 2 motion planning and control, with a biomedical-engineering PhD in human-centred robotics. Based in Reading, UK." />
+
+  <!-- Open Graph (controls how the link looks when shared on LinkedIn / messages) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mamoru Ueda · Robotics Software Engineer" />
+  <meta property="og:description" content="ROS 2 motion planning and control, with a biomedical-engineering PhD in human-centred robotics." />
+  <meta property="og:url" content="https://mamo1016.github.io/" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">Mamoru&nbsp;Ueda</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links">
+        <a href="#project">Project</a>
+        <a href="#skills">Skills</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+        <a class="nav__cta" href="assets/CV_Mamoru_Ueda.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="hero__eyebrow">Robotics Software Engineer · Reading, UK</p>
+        <h1 class="hero__title">Mamoru&nbsp;Ueda</h1>
+        <p class="hero__lede">
+          I build robot-manipulation software: <strong>ROS&nbsp;2</strong> motion planning,
+          kinematics, and real-time control. My biomedical-engineering PhD in
+          <strong>human-centred robotics</strong> (EMG/EEG, embodiment, neurorehabilitation)
+          is the bridge I bring to the field.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="assets/CV_Mamoru_Ueda.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn" href="https://github.com/mamo1016" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/mamoru-ueda-60677b283/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:kanzaki1016@gmail.com">Email</a>
+        </div>
+        <p class="hero__avail">
+          <span class="dot"></span>
+          Open to UK robotics roles · available full-time from <strong>September&nbsp;2026</strong> (Graduate Route, no sponsorship needed)
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURED PROJECT ===================== -->
+    <section id="project" class="section">
+      <div class="container">
+        <p class="section__kicker">Featured project</p>
+        <h2 class="section__title">ROS&nbsp;2 OpenArm Pick-and-Place</h2>
+
+        <div class="project">
+          <!-- Drop your recorded clip in as assets/demo.gif and it appears here automatically. -->
+          <figure class="project__media">
+            <img src="assets/demo.gif" alt="OpenArm manipulator performing pick-and-place in rviz2"
+                 onerror="this.closest('.project__media').classList.add('project__media--placeholder'); this.remove();" />
+            <figcaption class="project__placeholder-text">
+              Demo clip coming soon<br />
+              <small>record a short rviz2 GIF and save it as <code>assets/demo.gif</code></small>
+            </figcaption>
+          </figure>
+
+          <div class="project__body">
+            <p class="project__summary">
+              A ROS&nbsp;2 (Jazzy) simulation of a 7-DOF <strong>OpenArm</strong> manipulator
+              that picks parcels off a table and inserts them into a box, then extends to
+              <strong>two arms</strong> with independent and cooperative (bimanual) modes.
+              Built as a personal reimplementation on the open-source OpenArm.
+            </p>
+
+            <p class="project__note">
+              Simulation only. Grasping uses a kinematic &ldquo;attach to gripper frame&rdquo;
+              step (not contact physics); a MuJoCo physics phase with real grasping was planned
+              but not reached.
+            </p>
+
+            <ul class="project__highlights">
+              <li><strong>FK/IK on a 7-DOF redundant arm</strong> (roboticstoolbox-python, Levenberg&ndash;Marquardt) validated to <strong>0.0&nbsp;mm</strong> position error, with tolerance-based acceptance to work around the solver&rsquo;s false-negative flag.</li>
+              <li><strong>Resolved-rate Cartesian control</strong> (body-frame Jacobian, damped least-squares near singularities) for straight-line, constant-orientation box insertion.</li>
+              <li><strong>Dual-arm</strong> via a programmatically composed two-arm URDF, plus two coordination modes: a <strong>mutex-token shared workspace</strong> (collision-free by construction) and <strong>bimanual cooperative carry</strong> with a mid-motion grip-posture switch.</li>
+              <li>Modular node pipeline: target publisher &rarr; IK planner &rarr; joint-state bridge &rarr; <code>robot_state_publisher</code> &rarr; TF &rarr; rviz2.</li>
+            </ul>
+
+            <p class="project__stack">
+              <span>ROS&nbsp;2 Jazzy</span><span>Python&nbsp;3.12</span><span>roboticstoolbox-python</span>
+              <span>spatialmath</span><span>NumPy/SciPy</span><span>URDF</span><span>TF2</span><span>rviz2</span><span>WSL2</span>
+            </p>
+
+            <div class="project__links">
+              <a class="btn btn--primary" href="https://github.com/mamo1016/ros2-openarm-pick-place" target="_blank" rel="noopener">View code</a>
+              <a class="btn" href="https://github.com/mamo1016/ros2-openarm-pick-place/blob/main/docs/notes.md" target="_blank" rel="noopener">Technical notes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section section--alt">
+      <div class="container">
+        <p class="section__kicker">What I work with</p>
+        <h2 class="section__title">Skills</h2>
+
+        <div class="skills">
+          <div class="skill-card">
+            <h3>Robotics &amp; motion planning</h3>
+            <ul>
+              <li>ROS&nbsp;2 (Jazzy), colcon, launch files</li>
+              <li>Forward / inverse kinematics, Jacobians</li>
+              <li>Resolved-rate control, damped least-squares</li>
+              <li>Dual-arm / bimanual manipulation</li>
+              <li>URDF, TF2, robot_state_publisher, rviz2</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Languages &amp; scientific computing</h3>
+            <ul>
+              <li>Python (NumPy, SciPy, roboticstoolbox)</li>
+              <li>C / C++ (real-time)</li>
+              <li>MATLAB / Simulink</li>
+              <li>Linux / WSL2, Git</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Control &amp; signals</h3>
+            <ul>
+              <li>Real-time control, PID</li>
+              <li>Digital signal processing</li>
+              <li>EMG / EEG signal processing</li>
+              <li>Embodiment &amp; human-in-the-loop systems</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Hardware &amp; tools</h3>
+            <ul>
+              <li>KiCAD PCB design</li>
+              <li>Fusion&nbsp;360, 3D printing</li>
+              <li>Embedded / microcontrollers</li>
+            </ul>
+          </div>
+        </div>
+        <p class="skills__note">Also exploring: MoveIt&nbsp;2, MuJoCo, Gazebo, Isaac Sim.</p>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research" class="section">
+      <div class="container">
+        <p class="section__kicker">Academic background</p>
+        <h2 class="section__title">Research &amp; education</h2>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <h3>PhD candidate, Biomedical Engineering</h3>
+            <p class="timeline__meta">University of Reading · expected June&nbsp;2026</p>
+            <p>
+              Human-centred and neuro-robotics: EMG/EEG, embodiment, and soft actuated
+              exoskeletons for neurorehabilitation.
+            </p>
+          </div>
+          <div class="timeline__item">
+            <h3>BSc, Robotics</h3>
+            <p class="timeline__meta">Ritsumeikan University, Japan</p>
+          </div>
+        </div>
+
+        <h3 class="research__pubs-title">Publications</h3>
+        <ul class="pub-list">
+          <!-- Add a DOI/official link when available: wrap the title in <a href="..."> -->
+          <li>
+            <span class="pub-list__title">Novel Elastic Tensegrity-Inspired Joints in Soft Actuated Exoskeletons for Bi-Manual Neurorehabilitation</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section section--alt">
+      <div class="container container--narrow">
+        <p class="section__kicker">About</p>
+        <h2 class="section__title">A robotics engineer with a neuro background</h2>
+        <p class="about__text">
+          I&rsquo;m a robotics and control engineer based in Reading, UK, finishing a PhD in
+          biomedical engineering. I lead with human-centred and medical robotics, where my
+          EMG/EEG and embodiment research is a genuine differentiator, while staying hands-on
+          with general robot-arm manipulation: ROS&nbsp;2, kinematics, and motion planning.
+        </p>
+        <p class="about__text">
+          Most recently I was the sole developer on a ROS&nbsp;2 manipulation prototype for an
+          automated parcel-handling concept, owning the architecture, kinematics, Cartesian
+          control, and visualization end-to-end.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section section--contact">
+      <div class="container container--narrow">
+        <h2 class="section__title">Get in touch</h2>
+        <p class="contact__text">
+          Open to robotics software, motion-planning, and human-centred robotics roles in the UK.
+        </p>
+        <div class="contact__links">
+          <a class="btn btn--primary" href="mailto:kanzaki1016@gmail.com">kanzaki1016@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/mamoru-ueda-60677b283/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/mamo1016" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.youtube.com/watch?v=WiLpZ4oiBxw" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn" href="https://cults3d.com/en/users/Make_It_Black/3d-models" target="_blank" rel="noopener">3D&nbsp;designs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mamoru Ueda · Built with plain HTML &amp; CSS, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav__toggle');
+    const links = document.querySelector('.nav__links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('nav__links--open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        links.classList.remove('nav__links--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>
