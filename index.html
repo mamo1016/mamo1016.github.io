@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mamoru Ueda · Robotics Software Engineer</title>
-  <meta name="description" content="Mamoru Ueda — robotics software engineer working in ROS 2 motion planning and control, with a biomedical-engineering PhD in human-centred robotics. Based in Reading, UK." />
+  <title>Mamoru Ueda · Robotics Engineer</title>
+  <meta name="description" content="Mamoru Ueda, robotics engineer. ROS 2 motion software for real robots, and a biomedical-engineering PhD on a wearable robotic tail controlled by muscle signals. Based in Reading, UK." />
 
   <!-- Open Graph (controls how the link looks when shared on LinkedIn / messages) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mamoru Ueda · Robotics Software Engineer" />
-  <meta property="og:description" content="ROS 2 motion planning and control, with a biomedical-engineering PhD in human-centred robotics." />
+  <meta property="og:title" content="Mamoru Ueda · Robotics Engineer" />
+  <meta property="og:description" content="ROS 2 motion software for real robots, and a biomedical-engineering PhD in human-centred robotics." />
   <meta property="og:url" content="https://mamo1016.github.io/" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -25,10 +25,10 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav__links">
+        <a href="#work">Work</a>
         <a href="#project">Project</a>
         <a href="#skills">Skills</a>
-        <a href="#research">Research</a>
-        <a href="#about">About</a>
+        <a href="#research">Education</a>
         <a class="nav__cta" href="assets/CV_Mamoru_Ueda.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       </nav>
     </div>
@@ -38,13 +38,13 @@
   <main id="top">
     <section class="hero">
       <div class="container">
-        <p class="hero__eyebrow">Robotics Software Engineer · Reading, UK</p>
+        <p class="hero__eyebrow">Robotics Engineer · Reading, UK</p>
         <h1 class="hero__title">Mamoru&nbsp;Ueda</h1>
         <p class="hero__lede">
-          I build robot-manipulation software: <strong>ROS&nbsp;2</strong> motion planning,
-          kinematics, and real-time control. My biomedical-engineering PhD in
-          <strong>human-centred robotics</strong> (EMG/EEG, embodiment, neurorehabilitation)
-          is the bridge I bring to the field.
+          I get real robots working. My <strong>ROS&nbsp;2</strong> teaching tool created the
+          motions a dual-arm robot ran live for two days at a London trade show. In my PhD
+          I built a <strong>wearable robotic tail</strong> controlled by the wearer&rsquo;s
+          muscle signals and ran it with 25 people.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="assets/CV_Mamoru_Ueda.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -53,53 +53,78 @@
           <a class="btn" href="mailto:kanzaki1016@gmail.com">Email</a>
         </div>
         <p class="hero__avail">
-          <span class="dot"></span>
-          Open to UK robotics roles · available full-time from <strong>September&nbsp;2026</strong> (Graduate Route, no sponsorship needed)
+          Open to UK robotics roles. Right to work in the UK, no sponsorship needed
+          (Graduate Route after PhD award). Available full-time from early&nbsp;2027.
         </p>
       </div>
     </section>
 
-    <!-- ===================== FEATURED PROJECT ===================== -->
-    <section id="project" class="section">
+    <!-- ===================== WORK ===================== -->
+    <section id="work" class="section">
       <div class="container">
-        <p class="section__kicker">Featured project</p>
+        <p class="section__kicker">Recent work</p>
+        <h2 class="section__title">Robots I have worked on</h2>
+
+        <div class="work">
+          <article class="work__item">
+            <h3>Dual-arm robot at a London trade show</h3>
+            <p class="work__meta">Robotic Research Engineer (part-time) · 2026</p>
+            <ul>
+              <li>Motions taught in my own tool ran on the team&rsquo;s physical dual-arm robot. It loaded parcels live for two days at the Parcel+Post Expo, ExCeL London (September 2026).</li>
+              <li>Built a no-code teaching tool in Python and ROS&nbsp;2: create dual-arm motions step by step, replay them in simulation, and check every pose against the real robot&rsquo;s joint limits.</li>
+              <li>Solved the arm&rsquo;s inverse kinematics and moved the hand in straight lines, so parcels went in without clipping the box.</li>
+            </ul>
+            <p class="work__note">The motions were pre-programmed, not autonomous or vision-driven. The team built the hardware; I wrote the motion software.</p>
+          </article>
+
+          <article class="work__item">
+            <h3>Wearable robotic tail (PhD)</h3>
+            <p class="work__meta">University of Reading · 2020 to 2026</p>
+            <ul>
+              <li>Designed and built a wearable robotic tail triggered by the wearer&rsquo;s own arm muscle (EMG): embedded C++ on one main Arduino and three secondary boards (I2C), with stepper drivers.</li>
+              <li>Built the test rig and a MATLAB/Simulink pipeline that recorded brain signals (EEG), muscle signals (EMG) and foot pressure together.</li>
+              <li>The tail ran reliably through a 25-person study.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURED PROJECT ===================== -->
+    <section id="project" class="section section--alt">
+      <div class="container">
+        <p class="section__kicker">Open-source project</p>
         <h2 class="section__title">ROS&nbsp;2 OpenArm Pick-and-Place</h2>
 
         <div class="project">
-          <!-- Drop your recorded clip in as assets/demo.gif and it appears here automatically. -->
           <figure class="project__media">
             <img src="assets/demo.gif" alt="OpenArm manipulator performing pick-and-place in rviz2"
                  onerror="this.closest('.project__media').classList.add('project__media--placeholder'); this.remove();" />
-            <figcaption class="project__placeholder-text">
-              Demo clip coming soon<br />
-              <small>record a short rviz2 GIF and save it as <code>assets/demo.gif</code></small>
-            </figcaption>
+            <figcaption class="project__placeholder-text">Demo clip coming soon</figcaption>
           </figure>
 
           <div class="project__body">
             <p class="project__summary">
               A ROS&nbsp;2 (Jazzy) simulation of a 7-DOF <strong>OpenArm</strong> manipulator
               that picks parcels off a table and inserts them into a box, then extends to
-              <strong>two arms</strong> with independent and cooperative (bimanual) modes.
-              Built as a personal reimplementation on the open-source OpenArm.
+              <strong>two arms</strong> working separately or together.
             </p>
 
             <p class="project__note">
               Simulation only. Grasping uses a kinematic &ldquo;attach to gripper frame&rdquo;
-              step (not contact physics); a MuJoCo physics phase with real grasping was planned
-              but not reached.
+              step, not contact physics.
             </p>
 
             <ul class="project__highlights">
-              <li><strong>FK/IK on a 7-DOF redundant arm</strong> (roboticstoolbox-python, Levenberg&ndash;Marquardt) validated to <strong>0.0&nbsp;mm</strong> position error, with tolerance-based acceptance to work around the solver&rsquo;s false-negative flag.</li>
-              <li><strong>Resolved-rate Cartesian control</strong> (body-frame Jacobian, damped least-squares near singularities) for straight-line, constant-orientation box insertion.</li>
-              <li><strong>Dual-arm</strong> via a programmatically composed two-arm URDF, plus two coordination modes: a <strong>mutex-token shared workspace</strong> (collision-free by construction) and <strong>bimanual cooperative carry</strong> with a mid-motion grip-posture switch.</li>
-              <li>Modular node pipeline: target publisher &rarr; IK planner &rarr; joint-state bridge &rarr; <code>robot_state_publisher</code> &rarr; TF &rarr; rviz2.</li>
+              <li><strong>Inverse kinematics on a 7-DOF arm</strong> (roboticstoolbox-python, Levenberg&ndash;Marquardt), checked against forward kinematics.</li>
+              <li><strong>Straight-line hand motion</strong> for box insertion (resolved-rate control with damped least-squares near singularities).</li>
+              <li><strong>Two arms</strong> from a programmatically composed URDF: a shared workspace where only one arm enters at a time, and a two-handed carry.</li>
+              <li>Node pipeline: target publisher &rarr; IK planner &rarr; joint-state bridge &rarr; <code>robot_state_publisher</code> &rarr; TF &rarr; rviz2.</li>
             </ul>
 
             <p class="project__stack">
               <span>ROS&nbsp;2 Jazzy</span><span>Python&nbsp;3.12</span><span>roboticstoolbox-python</span>
-              <span>spatialmath</span><span>NumPy/SciPy</span><span>URDF</span><span>TF2</span><span>rviz2</span><span>WSL2</span>
+              <span>NumPy/SciPy</span><span>URDF</span><span>TF2</span><span>rviz2</span><span>Linux (WSL2)</span>
             </p>
 
             <div class="project__links">
@@ -112,100 +137,81 @@
     </section>
 
     <!-- ===================== SKILLS ===================== -->
-    <section id="skills" class="section section--alt">
+    <section id="skills" class="section">
       <div class="container">
         <p class="section__kicker">What I work with</p>
         <h2 class="section__title">Skills</h2>
 
         <div class="skills">
           <div class="skill-card">
-            <h3>Robotics &amp; motion planning</h3>
+            <h3>Robotics</h3>
             <ul>
-              <li>ROS&nbsp;2 (Jazzy), colcon, launch files</li>
-              <li>Forward / inverse kinematics, Jacobians</li>
-              <li>Resolved-rate control, damped least-squares</li>
-              <li>Dual-arm / bimanual manipulation</li>
-              <li>URDF, TF2, robot_state_publisher, rviz2</li>
+              <li>ROS&nbsp;2 (Jazzy): nodes, topics, launch files</li>
+              <li>Forward / inverse kinematics</li>
+              <li>Dual-arm manipulation</li>
+              <li>URDF, TF2, rviz2</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3>Languages &amp; scientific computing</h3>
+            <h3>Software</h3>
             <ul>
               <li>Python (NumPy, SciPy, roboticstoolbox)</li>
-              <li>C / C++ (real-time)</li>
+              <li>Linux (Ubuntu, command line), Git</li>
+              <li>C / C++ (embedded, Arduino)</li>
               <li>MATLAB / Simulink</li>
-              <li>Linux / WSL2, Git</li>
             </ul>
           </div>
           <div class="skill-card">
             <h3>Control &amp; signals</h3>
             <ul>
-              <li>Real-time control, PID</li>
+              <li>PID control</li>
               <li>Digital signal processing</li>
-              <li>EMG / EEG signal processing</li>
-              <li>Embodiment &amp; human-in-the-loop systems</li>
+              <li>EEG / EMG analysis</li>
+              <li>Machine learning classifiers</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3>Hardware &amp; tools</h3>
+            <h3>Hardware</h3>
             <ul>
-              <li>KiCAD PCB design</li>
+              <li>Arduino, Raspberry Pi, I2C</li>
+              <li>Circuit analysis, soldering</li>
               <li>Fusion&nbsp;360, 3D printing</li>
-              <li>Embedded / microcontrollers</li>
+              <li>Mechanism design</li>
             </ul>
           </div>
         </div>
-        <p class="skills__note">Also exploring: MoveIt&nbsp;2, MuJoCo, Gazebo, Isaac Sim.</p>
       </div>
     </section>
 
-    <!-- ===================== RESEARCH ===================== -->
-    <section id="research" class="section">
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="research" class="section section--alt">
       <div class="container">
         <p class="section__kicker">Academic background</p>
-        <h2 class="section__title">Research &amp; education</h2>
+        <h2 class="section__title">Education &amp; research</h2>
 
         <div class="timeline">
           <div class="timeline__item">
-            <h3>PhD candidate, Biomedical Engineering</h3>
-            <p class="timeline__meta">University of Reading · expected June&nbsp;2026</p>
-            <p>
-              Human-centred and neuro-robotics: EMG/EEG, embodiment, and soft actuated
-              exoskeletons for neurorehabilitation.
-            </p>
+            <h3>PhD, Biomedical Engineering</h3>
+            <p class="timeline__meta">University of Reading · thesis submitted with final corrections, October&nbsp;2026; award pending</p>
+            <p>Thesis: &ldquo;Neural Signatures of Surprise During Control of a Robotic Tail&rdquo;.</p>
           </div>
           <div class="timeline__item">
-            <h3>BSc, Robotics</h3>
-            <p class="timeline__meta">Ritsumeikan University, Japan</p>
+            <h3>BSc, Robotics Engineering</h3>
+            <p class="timeline__meta">Ritsumeikan University, Japan · March&nbsp;2019</p>
           </div>
         </div>
 
-        <h3 class="research__pubs-title">Publications</h3>
+        <h3 class="research__pubs-title">Awards</h3>
         <ul class="pub-list">
-          <!-- Add a DOI/official link when available: wrap the title in <a href="..."> -->
-          <li>
-            <span class="pub-list__title">Novel Elastic Tensegrity-Inspired Joints in Soft Actuated Exoskeletons for Bi-Manual Neurorehabilitation</span>
-          </li>
+          <li>Eurohaptics 2024: <a href="https://eurohaptics.org/ehc2024/award/" target="_blank" rel="noopener">Best Work In Progress, Honourable Mention</a></li>
+          <li>SBS Research Conference, University of Reading: Best Presentation</li>
         </ul>
-      </div>
-    </section>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="section section--alt">
-      <div class="container container--narrow">
-        <p class="section__kicker">About</p>
-        <h2 class="section__title">A robotics engineer with a neuro background</h2>
-        <p class="about__text">
-          I&rsquo;m a robotics and control engineer based in Reading, UK, finishing a PhD in
-          biomedical engineering. I lead with human-centred and medical robotics, where my
-          EMG/EEG and embodiment research is a genuine differentiator, while staying hands-on
-          with general robot-arm manipulation: ROS&nbsp;2, kinematics, and motion planning.
-        </p>
-        <p class="about__text">
-          Most recently I was the sole developer on a ROS&nbsp;2 manipulation prototype for an
-          automated parcel-handling concept, owning the architecture, kinematics, Cartesian
-          control, and visualization end-to-end.
-        </p>
+        <h3 class="research__pubs-title">Papers in preparation</h3>
+        <ul class="pub-list">
+          <li>M. Ueda, W. Harwin, T. Kondo, Y. Hayashi. &ldquo;Neural and Motor Signatures of Robotic Tail Embodiment through a Predictive Processing Paradigm.&rdquo;</li>
+          <li>D. George, M. Ueda, A. Aizawa, Z. Wang, Y. Hayashi. &ldquo;Novel Elastic-Tensegrity-Inspired Joints in Soft-Actuated Exoskeletons for Bi-Manual Neurorehabilitation.&rdquo;</li>
+        </ul>
       </div>
     </section>
 
@@ -214,7 +220,7 @@
       <div class="container container--narrow">
         <h2 class="section__title">Get in touch</h2>
         <p class="contact__text">
-          Open to robotics software, motion-planning, and human-centred robotics roles in the UK.
+          Open to robotics software, integration and human-centred robotics roles in the UK.
         </p>
         <div class="contact__links">
           <a class="btn btn--primary" href="mailto:kanzaki1016@gmail.com">kanzaki1016@gmail.com</a>
@@ -229,7 +235,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Mamoru Ueda · Built with plain HTML &amp; CSS, hosted on GitHub Pages.</p>
+      <p>&copy; <span id="year"></span> Mamoru Ueda</p>
     </div>
   </footer>
 
