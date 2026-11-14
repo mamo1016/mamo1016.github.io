@@ -145,6 +145,10 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .work__item ul { margin: 0 0 12px; padding-left: 20px; }
 .work__item li { margin-bottom: 8px; }
 .work__note { color: var(--muted); font-size: 0.92rem; margin: 0; }
+.work__media { margin: 0 0 14px; }
+.work__media img { display: block; width: 100%; max-width: 431px; height: auto; border: 1px solid var(--border); }
+.work__media figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
+.work__award { margin: 0; font-size: 0.95rem; font-weight: 600; }
 
 /* ===================== Featured project ===================== */
 .project {
